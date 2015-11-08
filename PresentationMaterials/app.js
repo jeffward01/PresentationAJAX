@@ -12,7 +12,7 @@ $('#GoBtn').on('click', function () {
         $('#ClearBtn').hide();
         return;
     } else {
-        
+
         //Items to Grab from Weather API
         var displayLocationFull;
         var zipcode;
@@ -34,10 +34,10 @@ $('#GoBtn').on('click', function () {
 
         //AJAX CALL
         $.ajax({
-                url: "http://api.wunderground.com/api/" + APIkey + "/conditions/q/" + SearchCriteria + ".json",
-                dataType: "json",
-                success: function (data) {
-
+            url: "http://api.wunderground.com/api/" + APIkey + "/conditions/q/" + SearchCriteria + ".json",
+            dataType: "json",
+            success: function (data) {
+                try {
 
                     //Grab information from returned JSON String
                     zipcode = data['current_observation']['display_location']['zip'];
@@ -74,33 +74,28 @@ $('#GoBtn').on('click', function () {
                     $('#windSpeed').text(wind_mph);
                     $('#windDirection').text(wind_dir);
 
-                
-                
+                    $('.tableRow').show();
 
-                //Set image
-                var icon = new Image();
-                var div = document.getElementById('iconImage');
-                icon.src = icon_url;
-                div.appendChild(icon);
+
+                    //Set image
+                    var icon = new Image();
+                    var div = document.getElementById('iconImage');
+                    icon.src = icon_url;
+                    div.appendChild(icon);
 
                     //Error checking
-                $('.tableRow').show();
-                if ((zipcode == undefined)) {
-                    $('#errorDescription').text("ERROR!");
-                }
-            },
-            //Error checking
-            error: function (XMLHttpRequest, textStatus, errorThrown, error) {
-                $('.tableRow').hide();
-                console.log(xhr.statusText);
-                console.log(textStatus);
-                console.log(error);
+                } catch (err) {
+                    alert("Please insert a valid zip code");
+                    $('#ClearBtn').hide();
+                    $('#SearchInput').val("");
+                    return;
 
+                }
             }
         });
 
 
-}
+    }
 });
 
 

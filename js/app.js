@@ -37,11 +37,15 @@ $('#GoBtn').on('click', function () {
             url: "http://api.wunderground.com/api/" + APIkey + "/conditions/q/" + SearchCriteria + ".json",
             dataType: "json",
             success: function (data) {
+                
+                //Validation
 
 
                 //Grab information from returned JSON String
                 //[Insert Code here]
 
+                
+                
 
                 //populate DOM with new values
                 //[Insert Code Here]
@@ -52,19 +56,20 @@ $('#GoBtn').on('click', function () {
                 //Set image
                 //[Insert Code here]
 
+                
+                
                 //Error Checking
                 $('.tableRow').show();
                 if ((zipcode == undefined)) {
                     $('#errorDescription').text("ERROR!");
                 }
-            },
-            //If Error is passed back
-            error: function (XMLHttpRequest, textStatus, errorThrown, error) {
-                $('.tableRow').hide();
-                console.log(xhr.statusText);
-                console.log(textStatus);
-                console.log(error);
+                
+                //Error Message
+                
+                
+                
             }
+          
         });
 
 
