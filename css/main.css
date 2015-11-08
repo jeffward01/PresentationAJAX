@@ -26,3 +26,8 @@
 .page-header{
     border-bottom: none;
 }
+
+.mapArea{
+    width: 500px;
+    height: 500px;
+}
