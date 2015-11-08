@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Links   -->
+    <!--  Bootstrap  -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!--  My CSS  -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <title>AJAX Weather App</title>
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>AJAX Weather App</h1>
+        </div>
+    </div>
+    <div class="mainContainer">
+        <div class="searchContainer">
+            <div class="row">
+                <div class="input-group SearchBar">
+                    <input type="text" class="form-control" id="SearchInput" placeholder="Enter Zip Code">
+                    <span class="input-group-btn SearchBtn">
+		<button type="button" id="GoBtn" class="btn btn-default">Go!</button>
+		<button type="button" id="ClearBtn" class="btn btn-default">Clear</button>
+
+	</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="resultsArea">
+            <div class="row">
+                <!-- Column 1 || Left -->
+                <div class="col-md-7 col-lg-7">
+                    <div class="page-header">
+                        <h1 id="SearchLocation"></h1>
+                        <h3 id="subHeading"></h3>
+                        <h3 id="CurrentWeather"></h3>
+                    </div>
+
+                </div>
+                <!-- Column 2 || Right      -->
+                <div class="col-md-5 col-lg-5">
+                    <h1 id="iconImage"></h1>
+                    <h3 id="Temperature"></h3>
+                    <h3 id="FeelsLike"></h3>
+                </div>
+            </div>
+
+            <div class="row tableRow">
+                <div class="col-md-12 col-lg-12">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Longitude</th>
+                                <th>Latitude</th>
+                                <th>Elevation</th>
+                                <th>TimeZone</th>
+                                <th>UV</th>
+                                <th>Humidity</th>
+                                <th>Wind Status</th>
+                                <th>Wind Speed</th>
+                                <th>Wind Direction</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="longitude"></td>
+                                <td id="latitude"></td>
+                                <td id="elevation"></td>
+                                <td id="timezone"></td>
+                                <td id="uv"></td>
+                                <td id="humidity"></td>
+                                <td id="windStatus"></td>
+                                <td id="windSpeed"></td>
+                                <td id="windDirection"></td>
+                            </tr>                   
+                        </tbody>
+                    </table>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="ErrorArea">
+            <div id="errorDescription"></div>
+        </div>
+
+
+
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript Links -->
+    <!--  Jquery js file Link  -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!--  Bootstrap js file Link  -->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!--  My JavaScript File links  -->
+    <script src="js/pageFlow.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+/*Jumbotron*/
+.jumbotron{
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+/*Search Container*/
+.searchContainer{
+    padding-top: 25px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.SearchBar{
+    width: 45%;
+    margin: 0 auto;   
+}
+
+/*Results Area*/
+.resultsArea{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.page-header{
+    border-bottom: none;
+}
