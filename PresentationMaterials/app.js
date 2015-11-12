@@ -56,7 +56,6 @@ $('#GoBtn').on('click', function () {
                     icon_url = data['current_observation']['icon_url'];
                     humidity = data['current_observation']['relative_humidity'];
                     displayLocationFull = data['current_observation']['display_location']['full'];
-                    //error = data['response']['error']['description'];
 
                     //populate DOM with new values
                     $('#SearchLocation').text(displayLocationFull);
@@ -74,8 +73,9 @@ $('#GoBtn').on('click', function () {
                     $('#windSpeed').text(wind_mph);
                     $('#windDirection').text(wind_dir);
 
+                    
+                    //Show Table after all values have been 'grabbed'
                     $('.tableRow').show();
-
 
                     //Set image
                     var icon = new Image();
@@ -89,7 +89,6 @@ $('#GoBtn').on('click', function () {
                     $('#ClearBtn').hide();
                     $('#SearchInput').val("");
                     return;
-
                 }
             }
         });

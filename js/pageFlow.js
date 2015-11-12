@@ -66,10 +66,6 @@ function shrinkInput() {
 
 //Show Table on click
 $('#GoBtn').on('click', function () {
-
-
-
-
     $('#ClearBtn').show();
 })
 

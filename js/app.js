@@ -37,42 +37,40 @@ $('#GoBtn').on('click', function () {
             url: "http://api.wunderground.com/api/" + APIkey + "/conditions/q/" + SearchCriteria + ".json",
             dataType: "json",
             success: function (data) {
-                
-                //Validation
 
-
-                //Grab information from returned JSON String
-                //[Insert Code here]
-
-                
-                
-
-                //populate DOM with new values
-                //[Insert Code Here]
+                // Try-Catch statement to ensure all errors are handled
+                try {
+                    //Grab information from returned JSON String
+                    //[Insert Code here]
 
 
 
 
-                //Set image
-                //[Insert Code here]
+                    //populate DOM with new values
+                    //[Insert Code Here]
 
-                
-                
-                //Error Checking
-                $('.tableRow').show();
-                if ((zipcode == undefined)) {
-                    $('#errorDescription').text("ERROR!");
+
+
+
+                    //Show Table after all values have been 'grabbed'
+                    $('.tableRow').show();
+
+                    //Set image
+                    var icon = new Image();
+                    var div = document.getElementById('iconImage');
+                    icon.src = //insert ['icon_url'];
+                    div.appendChild(icon)
+
+
+                    //Error Checking
+                } catch (err) {
+                    alert("Please insert a valid zip code");
+                    $('#ClearBtn').hide();
+                    $('#SearchInput').val("");
+                    return;
                 }
-                
-                //Error Message
-                
-                
-                
             }
-          
         });
-
-
     }
 });
 
