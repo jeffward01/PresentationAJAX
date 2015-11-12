@@ -43,13 +43,24 @@ $('#GoBtn').on('click', function () {
                     //Grab information from returned JSON String
                     //[Insert Code here]
 
-
+                    
 
 
                     //populate DOM with new values
-                    //[Insert Code Here]
-
-
+                    $('#SearchLocation').text(displayLocationFull);
+                    $('#subHeading').text("Zip: " +zipcode);
+                    $('#CurrentWeather').text("Current Weather: " + weather);
+                    $('#Temperature').text("Current Temperature: " + temperature_string);
+                    $('#FeelsLike').text("Feels like: " + feelslike_string);
+                    $('#longitude').text(longitude);
+                    $('#latitude').text(latitude)
+                    $('#elevation').text(elevation)
+                    $('#timezone').text(timeZone);
+                    $('#uv').text(uv);
+                    $('#humidity').text(humidity);
+                    $('#windStatus').text(wind_string);
+                    $('#windSpeed').text(wind_mph);
+                    $('#windDirection').text(wind_dir);
 
 
                     //Show Table after all values have been 'grabbed'
