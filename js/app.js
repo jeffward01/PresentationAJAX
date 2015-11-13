@@ -41,14 +41,28 @@ $('#GoBtn').on('click', function () {
                 // Try-Catch statement to ensure all errors are handled
                 try {
                     //Grab information from returned JSON String
-                    //[Insert Code here]
+                    temperature_string = data[''][''];
+                    weather = data[''][''];
 
-                    
+                    zipcode = data['current_observation']['display_location']['zip'];
+                    longitude = data['current_observation']['display_location']['longitude'];
+                    latitude = data['current_observation']['display_location']['latitude'];
+                    elevation = data['current_observation']['display_location']['elevation'];
+                    timeZone = data['current_observation']['local_tz_short'];
+                    wind_string = data['current_observation']['wind_string'];
+                    wind_dir = data['current_observation']['wind_dir'];
+                    wind_mph = data['current_observation']['wind_mph'];
+                    uv = data['current_observation']['UV'];
+                    feelslike_string = data['current_observation']['feelslike_string'];
+                    icon = data['current_observation']['icon'];
+                    icon_url = data['current_observation']['icon_url'];
+                    humidity = data['current_observation']['relative_humidity'];
+                    displayLocationFull = data['current_observation']['display_location']['full'];
 
 
                     //populate DOM with new values
                     $('#SearchLocation').text(displayLocationFull);
-                    $('#subHeading').text("Zip: " +zipcode);
+                    $('#subHeading').text("Zip: " + zipcode);
                     $('#CurrentWeather').text("Current Weather: " + weather);
                     $('#Temperature').text("Current Temperature: " + temperature_string);
                     $('#FeelsLike').text("Feels like: " + feelslike_string);
@@ -70,7 +84,7 @@ $('#GoBtn').on('click', function () {
                     var icon = new Image();
                     var div = document.getElementById('iconImage');
                     icon.src = //insert ['icon_url'];
-                    div.appendChild(icon)
+                        div.appendChild(icon)
 
 
                     //Error Checking

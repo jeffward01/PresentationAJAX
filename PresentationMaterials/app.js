@@ -40,13 +40,16 @@ $('#GoBtn').on('click', function () {
                 try {
 
                     //Grab information from returned JSON String
+                    weather = data['current_observation']['weather'];
+                    temperature_string = data['current_observation']['temperature_string'];
+
+
+
                     zipcode = data['current_observation']['display_location']['zip'];
                     longitude = data['current_observation']['display_location']['longitude'];
                     latitude = data['current_observation']['display_location']['latitude'];
                     elevation = data['current_observation']['display_location']['elevation'];
                     timeZone = data['current_observation']['local_tz_short'];
-                    weather = data['current_observation']['weather'];
-                    temperature_string = data['current_observation']['temperature_string'];
                     wind_string = data['current_observation']['wind_string'];
                     wind_dir = data['current_observation']['wind_dir'];
                     wind_mph = data['current_observation']['wind_mph'];
@@ -73,7 +76,7 @@ $('#GoBtn').on('click', function () {
                     $('#windSpeed').text(wind_mph);
                     $('#windDirection').text(wind_dir);
 
-                    
+
                     //Show Table after all values have been 'grabbed'
                     $('.tableRow').show();
 
